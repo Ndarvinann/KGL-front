@@ -5,64 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
-    <title>My Accounts</title>
+    <title>Payments</title>
 </head>
 <body class="bg-light">
-    <div class="container-fluid mt-2">
+    <div class="container-fluid mt-2 ">
         <div class="row">
             <div class="col-md-3">
                 <div class="card">
-                    <div class="card-header bg-secondary">
+                    <div class="card-header text bg-secondary d-none">
                         <h4>Features</h4>
                     </div>
                     <div class="card-body">
-                        <ul class="list-group text text-black fw-bold">
-                            <li class="list-group-item">Dashboard</li>
-                            <li class="list-group-item">Companies</li>
-                            <li class="list-group-item">Users</li>
-                            <li class="list-group-item">My Account</li>
-                            <li class="list-group-item">Products</li>
-                            <li class="list-group-item">Payments</li>
-                            <li class="list-group-item">sales</li>
-                            <li class="list-group-item">Logout</li>
+                        <ul class="list-group text text-black">
+                            <li class="list-group-item"><a href="http://127.0.0.1:5500/class/KGL-pj/manager-dashb.html">Dashboard</a></li>
+                            <li class="list-group-item"> <a href="/Companies.html">Companies</a></li>
+                            <li class="list-group-item"><a href="#">Users</a></li>
+                            <li class="list-group-item"><a href="http://127.0.0.1:5500/class/KGL-pj/accounts.html">Account </a></li>
+                            <li class="list-group-item"> <a href="http://127.0.0.1:5500/class/KGL-pj/Products.htm">Products</a></li>
+                            <li class="list-group-item"><a href="http://127.0.0.1:5500/class/KGL-pj/payments.html">Payments</a></li>
+                            <li class="list-group-item"> <a href="/sales.html">sales</a></li>
+                            <li class="list-group-item"><a href="http://127.0.0.1:5500/class/KGL-pj/index.html">Logout</a></li>
                         </ul>
+                        
                     </div>
                 </div>
             </div>
-                <div class="col-md-5">
-                    <div class="card">
-                        <div class="card-body border-success">
-                          <h6 class="card-title">RESET YOUR PASSWORD</h6>
-                          <h6 class="fst-italic fw-light">Please fill in all the fields below.</h6>
-                          <div class="input-group">
-                            <input type="text" aria-label="First name" class="form-control" id="floatingPassword" placeholder="First name">
-                            <input type="text" aria-label="Last name" class="form-control id="floatingPassword" placeholder="Last name">
-                          </div>
-                          <p></p>
-                          <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">Email Address</label>
-                          </div>
-                          <div class="form-floating">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                            <label for="floatingPassword">New Password </label>
-                          </div>
-                          <p></p>
-                          <div class="form-floating">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                            <label for="floatingPassword">Confirm New password</label>
-                          </div>
+            <div class="col-9">
+                <h1>Products</h1>
+                <div class="row">
+                    <div class="col-md-4">
+                <h4> Users List </h4>
+                    <div class="row">
+                            <div class="card"">
+                                <img src=".jpeg" class="card-img-top" alt="ground-nuts">
+                                <div class="card-body">
+                                  <h5 class="card-title"> Manager </h5>
+                                  <p class="card-text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                  <a href="#manager's page" class="btn btn-secondary">Details</a>
+                                </div>
+                              </div>
                         </div>
-                        <div class=" d-flex justify-content-center gap-4 mb-4">
-                            <button class="btn btn-secondary">Save changes</button>
-                            <button class="btn btn-primary">Submit</button>
+                        <div class="col-md-4">
+                            <div class="card"">
+                                <img src="img/maize.jpg" height="200px" class="card-img-top" alt="maize">
+                                <div class="card-body">
+                                  <h5 class="card-title">Maize, 5500ugx per kg </h5>
+                                  <p class="card-text"> Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                                  <a href="http://127.0.0.1:5500/class/KGL-pj/payments.html" class="btn btn-danger">Buy now!</a>
+                                </div>
+                              </div>
                         </div>
-                      </div>
-                      </div>
-                      </div>
-                      </div>
-                    
-            
+                        <div class="col-md-4">
+                            <div class="card"">
+                                <img src="img/beans.jpg" height="200px" class="card-img-top" alt="beans">
+                                <div class="card-body">
+                                  <h5 class="card-title">Beans 5500ugx per kg </h5>
+                                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                  <a href="http://127.0.0.1:5500/class/KGL-pj/payments.html" class="btn btn-danger">Buy now</a>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+            </div>
+
+        </div>    
+    </div>
+ </div>
+
 
 
     <script src="css/js/bootstrap.bundle.js"></script> 
