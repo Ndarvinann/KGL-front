@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports Page</title>
+    <link rel="stylesheet" href="report.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Generate Reports</h1>
+        <form id="reportsForm">
+            <div class="form-group">
+                <label for="reportType">Select Report Type:</label>
+                <select id="reportType" required>
+                    <option value="salesReport">Sales Report</option>
+                    <option value="procurementReport">Procurement Report</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dateRange">Select Date Range:</label>
+                <input type="date" id="startDate" required>
+                <input type="date" id="endDate" required>
+            </div>
+            <div class="form-group">
+                <label for="branchSelection">Select Branch:</label>
+                <select id="branchSelection">
+                    <option value="allBranches">All Branches</option>
+                    <option value="branch1">Branch 1</option>
+                    <option value="branch2">Branch 2</option>
+                    <option value="branch3">Branch 3</option>
+                </select>
+            </div>
+            <button type="submit">Generate Report</button>
+            <button type="button" id="downloadReport">Download Report</button>
+            <button type="button" id="printReport">Print Report</button>
+        </form>
+        <div id="reportDisplay" class="report-display">
+            <!-- Generated report will be displayed here -->
+        </div>
+    </div>
+</body>
+</html>
