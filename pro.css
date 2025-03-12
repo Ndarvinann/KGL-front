@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* White background */
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    background: #ffffff; /* White container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #333333; /* Black text */
+}
+
+h2 {
+    color: #4CAF50; /* Green text */
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd; /* Light gray border */
+}
+
+th {
+    background-color: #FFEB3B; /* Yellow background for headers */
+    color: #333333; /* Black text */
+}
+
+td {
+    background-color: #f9f9f9; /* Light gray background for table rows */
+}
+
+.quick-links {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.quick-links button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green button */
+    color: white; /* White text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.quick-links button:hover {
+    background-color: #388E3C; /* Darker green on hover */
+}
+
+.graph-placeholder {
+    height: 200px;
+    background-color: #FFEB3B; /* Yellow background for graph placeholder */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #333333; /* Black dashed border */
+    border-radius: 5px;
+    color: #333333; /* Black text */
+}
