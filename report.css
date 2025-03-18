@@ -8,14 +8,14 @@ body {
 .container {
     max-width: 600px;
     margin: auto;
-    background: #00ff11; /* White container */
+    background: plum
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    color: #4CAF50; /* Green text */
+    color: beige
     text-align: center;
 }
 
@@ -40,7 +40,7 @@ input[type="date"] {
 
 select:focus,
 input[type="date"]:focus {
-    border-color: #4CAF50; /* Green border on focus */
+    border-color: black
     outline: none; /* Remove default outline */
 }
 

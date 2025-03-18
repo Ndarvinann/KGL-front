@@ -1,3 +1,4 @@
+//capture the whole form
 let form = document.getElementById("procurementForm");
 
 //let tableBod = document.getElementById("procuredTable").getElementsByTagName("tbody")[0];
@@ -22,15 +23,27 @@ form.addEventListener("submit", function(event){
     priceToSell: document.getElementById("priceToSell").value
 
   }
-
-    console.log("information submitted")
-    
-});
-
+    //add one to existing rows
+    const rowCount =tableBody.rows.length +1;
  
-/* This is an attempt
+    //add table row
+    const newRow = document.createElement("tr");
 
-const loginData = {
-    email: document.getElementById("emailAddress").value,
-    password: document.getElementById("passKey").value
-} */
+    newRow.innerHTML = `
+    <td>${rowCount}</td>
+    <td>${produceData.produceName}</td>
+    <td>${produceData.produceType}</td>
+    <td>${produceData.dateTime}</td>
+    <td>${produceData.tonnage}</td>
+    <td>${produceData.cost}</td>
+    <td>${produceData.dealerName}</td>
+    <td>${produceData.branchName}</td>
+    <td>${produceData.contact}</td>
+    <td>${produceData.priceToSell}</td>
+`
+//append row to table
+tableBody.appendChild(newRow); // add a child to the tableBody.
+
+//clear form feilds aftter submission
+document.getElementById("procureForm").reset();
+});
