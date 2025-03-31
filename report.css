@@ -8,7 +8,7 @@ body {
 .container {
     max-width: 600px;
     margin: auto;
-    background: plum
+    background: plum;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -16,7 +16,7 @@ body {
 
 h1 {
     color: beige
-    text-align: center;
+    text-align : center;
 }
 
 .form-group {
