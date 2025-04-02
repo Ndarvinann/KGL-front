@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "start"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -13,8 +14,12 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/annamars-svg/KGL-front/issues"
-    
   },
   "homepage": "https://github.com/annamars-svg/KGL-front#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.9",
+    "pug": "^3.0.3"
+  }
 }
