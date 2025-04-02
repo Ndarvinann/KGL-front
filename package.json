@@ -1,0 +1,20 @@
+{
+  "name": "kgl-pj",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/annamars-svg/KGL-front.git"
+  },
+  "author": "Darvin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/annamars-svg/KGL-front/issues"
+    
+  },
+  "homepage": "https://github.com/annamars-svg/KGL-front#readme",
+  "description": ""
+}
