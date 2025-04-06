@@ -1,0 +1,87 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Karibu Groceries - Reports
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css')
+  link(rel='stylesheet' href='/css/kglCss/report.css')
+// Navigation
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  .container
+    a.navbar-brand(href='#')
+      i.fas.fa-shopping-basket.me-2
+      | Karibu Groceries
+    .collapse.navbar-collapse
+      ul.navbar-nav.me-auto
+        li.nav-item
+          a.nav-link(href='dashboard.html')
+            i.fas.fa-home
+            |  Dashboard
+        li.nav-item
+          a.nav-link.active(href='#')
+            i.fas.fa-chart-bar
+            |  Reports
+      span.navbar-text.text-white
+        i.fas.fa-user-circle.me-1
+        |  Manager
+// Main Content
+.container.mt-4
+  .reports-container
+    .report-header.d-flex.justify-content-between.align-items-center
+      h2
+        i.fas.fa-chart-line.text-success.me-2
+        | Reports Dashboard
+      .text-muted
+        | Last updated: 
+        span#update-time 4/3/2025, 4:10:51 AM
+    // Simple Report Cards
+    .row
+      .col-md-6
+        .report-card
+          h5
+            i.fas.fa-receipt.me-2
+            | Sales Report
+          p View daily, weekly, or monthly sales data
+          a.btn.btn-sm.btn-success(href='#') Generate Report
+      .col-md-6
+        .report-card
+          h5
+            i.fas.fa-truck.me-2
+            | Procurement Report
+          p Track inventory purchases and supplier data
+          a.btn.btn-sm.btn-success(href='#') Generate Report
+      .col-md-6
+        .report-card
+          h5
+            i.fas.fa-boxes.me-2
+            | Inventory Report
+          p Current stock levels and product movement
+          a.btn.btn-sm.btn-success(href='#') Generate Report
+      .col-md-6
+        .report-card
+          h5
+            i.fas.fa-users.me-2
+            | Staff Performance
+          p Employee productivity metrics
+          a.btn.btn-sm.btn-success(href='#') Generate Report
+    // Quick Date Filter
+    .mt-4
+      h5 Quick Filters
+      .btn-group
+        button.btn.btn-outline-secondary.btn-sm Today
+        button.btn.btn-outline-secondary.btn-sm This Week
+        button.btn.btn-outline-secondary.btn-sm This Month
+        button.btn.btn-outline-secondary.btn-sm Custom Range
+// Footer
+footer.mt-5.py-3.bg-light
+  .container.text-center
+    p.mb-0.text-muted &copy; 2025 Karibu Groceries. All rights reserved.
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js')
+script.
+  // Simple time updater
+  function updateTime() {
+  const now = new Date();
+  document.getElementById('update-time').textContent = now.toLocaleString();
+  }
+  updateTime();

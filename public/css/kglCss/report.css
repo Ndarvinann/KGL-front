@@ -1,69 +1,30 @@
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #ffffff; /* White background */
-    margin: 0;
-    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
 }
-
-.container {
-    max-width: 600px;
-    margin: auto;
-    background: plum;
-    padding: 20px;
+.reports-container {
+    background: white;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
-    color: beige
-    text-align : center;
-}
-
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #333333; /* Black text */
-}
-
-select,
-input[type="date"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #cccccc; /* Light gray border */
-    border-radius: 4px;
-    box-sizing: border-box; /* Include padding and border in element's total width */
-}
-
-select:focus,
-input[type="date"]:focus {
-    border-color: black
-    outline: none; /* Remove default outline */
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #4CAF50; /* Green button */
-    color: white; /* White text */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    width: 100%; /* Full width */
-    margin-top: 10px; /* Space between buttons */
-}
-
-button:hover {
-    background-color: #388E3C; /* Darker green on hover */
-}
-
-.report-display {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
     margin-top: 20px;
-    border: 1px solid #cccccc; /* Light gray border */
-    border-radius: 4px;
-    padding: 10px;
-    background-color: #f9f9f9; /* Light gray background for report display */
+}
+.report-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+.report-card {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: all 0.3s;
+}
+.report-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.report-card h5 {
+    color: #2c8a47;
 }

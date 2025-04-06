@@ -17,7 +17,7 @@ body {
     position: fixed;
     background-color: rgba(231, 178, 231, 0.18);
     color: #333;
-    box-shadow: 2px 0 10px rgba(67, 2, 2, 0.1);
+    box-shadow: 2px 0 10px rgba(67, 2, 2, 0.5);
     z-index: 1000;
 }
 
@@ -48,24 +48,27 @@ body {
 .card {
     border: none;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     background-color: white;
 }
 
 .stat-card {
-    border-left: 4px solid;
+    border-left: 6px solid;
 }
 
 .stat-card.total-products {
     border-left-color: var(--primary-green);
+    background-color: rgba(40, 167, 69, 0.1);
 }
 
 .stat-card.low-stock {
     border-left-color: var(--secondary-yellow);
+    background-color: rgba(255, 193, 7, 0.1)
 }
 
 .stat-card.out-of-stock {
     border-left-color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.1)
 }
 
 .table-responsive {
