@@ -14,24 +14,24 @@ head
       h2.mb-0 Karibu Groceries Limited
       p.mb-0 Fresh groceries Everyday
     .card-body.text-center
-      // Animated logo container
+      //- Animated logo container
       .logo-container.floating
-        img.logo-img(src='/public/img/image 26.png' alt='KGL Logo')
+        img.logo-img(src='/img/image 26.png' alt='KGL Logo')
       h4.mb-4 Welcome Back!
-      form#loginForm
+      form#loginForm(action='/login' method = 'POST')
         .mb-3.text-start
           label.form-label(for='email') Email
           .input-group
             span.input-group-text.bg-light
               i.bi.bi-envelope.text-success
-            input#email.form-control(type='email' required='' placeholder='Enter your email address')
+            input#email.form-control(type='email'  name='Email' required placeholder='Enter your email address')
           span#emailError.text-danger.error-message
         .mb-3.text-start
           label.form-label(for='password') Password
           .input-group
             span.input-group-text.bg-light
               i.bi.bi-lock.text-success
-            input#password.form-control(type='password' required='' placeholder='Enter your password')
+            input#password.form-control(type='password' required name='password' placeholder='Enter your password')
             button#togglePassword.input-group-text.bg-light(type='button')
               i.bi.bi-eye.text-success
           span#passwordError.text-danger.error-message
@@ -40,8 +40,8 @@ head
           .form-check
             input#rememberMe.form-check-input(type='checkbox')
             label.form-check-label(for='rememberMe') Remember me
-          a.links.text-success(href='http://127.0.0.1:5500/views/HTML/resetPassword.html') Forgot password?
+          a.links.text-success(href="/signup") Forgot password?
         button.btn.btn-login.btn-success.w-100.mb-3(type='submit')
           | Log-In
 script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js')
-script(src='/public/filejs/login.js')
+script(src='/filejs/login.js')
