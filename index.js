@@ -13,8 +13,9 @@ const flash = require("connect-flash");
 
 require("dotenv").config();
 //import models here.(files from your models folder)
-const Signup = require("./model/resetPassword");
-const user = require("./model/signUp");
+const Signup = require("./model/signupSchema");
+const procurement = require('./model/procurementShema');
+
 //2.instatiations
 const app = express();
 const PORT = 3002;
@@ -26,7 +27,8 @@ const managerRoutes = require("./routes/managerRoute");
 const reportRoutes = require("./routes/reportRoute");
 const paymentRoutes = require("./routes/paymentsRoute");
 const resetPassword = require("./routes/resetPassword");
-//const employee = require('./routes/employee')
+const signupRoutes = require("./routes/signupRoutes" );
+//const signupSchema = require("./model/signupSchema");
 //3.configurations
 //connect mongoose
 mongoose.connect(process.env.BASE, {});
@@ -44,107 +46,105 @@ app.set("views", path.join(__dirname, "views"));
 //4.middleware
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 //passport configurations
-//passport.use(Signup.createStrategy()); //get the filename from your models folder.
-//passport.serializeUser(Signupmongoose.connect.serializeUser());
-//passport.deserializeUser(Signup.deserializeUser());
+passport.use(Signup.createStrategy()); //get the filename from your models folder.
+passport.serializeUser(Signup.serializeUser());
+passport.deserializeUser(Signup.deserializeUser());
 // Local Strategy Configuration
-passport.use(
-  new localStrategy(
-    {
-      usernameField: "email", // Using email instead of username
-    },
-    async (email, password, done) => {
-      try {
-        const user = await User.findOne({ email });
-        if (!user) {
-          return done(null, false, { message: "Incorrect email" });
-        }
+// passport.use(
+//   new localStrategy(
+//     {
+//       usernameField: "email", // Using email instead of username
+//     },
+//     async (email, password, done) => {
+//       try {
+//         const user = await User.findOne({ email });
+//         if (!user) {
+//           return done(null, false, { message: "Incorrect email" });
+//         }
 
-        const isMatch = await bcrypt.compare(password, user.password);
-        if (!isMatch) {
-          return done(null, false, { message: "Incorrect password" });
-        }
+//         const isMatch = await bcrypt.compare(password, user.password);
+//         if (!isMatch) {
+//           return done(null, false, { message: "Incorrect password" });
+//         }
 
-        return done(null, user);
-      } catch (err) {
-        return done(err);
-      }
-    }
-  )
-);
+//         return done(null, user);
+//       } catch (err) {
+//         return done(err);
+//       }
+//     }
+//   )
+// );
 // Session Serialization
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
+// passport.serializeUser((user, done) => {
+//   done(null, user.id);
+// });
 
-passport.deserializeUser(async (id, done) => {
-  try {
-    const user = await User.findById(id);
-    done(null, user);
-  } catch (err) {
-    done(err);
-  }
-});
+// passport.deserializeUser(async (id, done) => {
+//   try {
+//     const user = await User.findById(id);
+//     done(null, user);
+//   } catch (err) {
+//     done(err);
+//   }
+// });
 //express session configurations
 app.use(expressSession);
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(flash());
+//app.use(flash());
 
-//flash messages Middleware
-app.use((req, res, next) => {
-  // expose data to all templates during a request cycle
-  res.locals.success = req.flash("success"); //retrives flash messages from your passport routes
-  res.locals.error = req.flash("error"); //retrives error notifications. they are automatically cleared after being read.
-  res.locals.user = req.user || null; // all logedin users will be available in all tempaltes
-  next(); //pass control to the next middleware.
-});
+// //flash messages Middleware
+// app.use((req, res, next) => {
+//   // expose data to all templates during a request cycle
+//   res.locals.success = req.flash("success"); //retrives flash messages from your passport routes
+//   res.locals.error = req.flash("error"); //retrives error notifications. they are automatically cleared after being read.
+//   res.locals.user = req.user || null; // all logedin users will be available in all tempaltes
+//   next(); //pass control to the next middleware.
+// });
 
-passport.use(
-  new localStrategy(
-    {
-      usernameField: "email", // if using email instead of username
-    },
-    async (email, password, done) => {
-      try {
-        const user = await User.findOne({ email });
-        if (!user) return done(null, false);
+// passport.use(
+//   new localStrategy(
+//     {
+//       usernameField: "email", // if using email instead of username
+//     },
+//     async (email, password, done) => {
+//       try {
+//         const user = await User.findOne({ email });
+//         if (!user) return done(null, false);
 
-        const isValid = await bcrypt.compare(password, user.password);
-        isValid ? done(null, user) : done(null, false);
-      } catch (err) {
-        done(err);
-      }
-    }
-  )
-);
-passport.serializeUser((user, done) => {
-  done(null, user.id);
-});
+//         const isValid = await bcrypt.compare(password, user.password);
+//         isValid ? done(null, user) : done(null, false);
+//       } catch (err) {
+//         done(err);
+//       }
+//     }
+//   )
+// );
+// passport.serializeUser((user, done) => {
+//   done(null, user.id);
+// });
 
-passport.deserializeUser(async (id, done) => {
-  try {
-    const user = await User.findById(id);
-    done(null, user);
-  } catch (err) {
-    done(err);
-  }
-});
+// passport.deserializeUser(async (id, done) => {
+//   try {
+//     const user = await User.findById(id);
+//     done(null, user);
+//   } catch (err) {
+//     done(err);
+//   }
+// });
 //5.routes
 app.use("/", authRoutes);
 app.use("/", reportRoutes);
 app.use("/", managerRoutes);
 app.use("/", procurementRoutes);
 app.use("/", paymentRoutes);
-//app.use('/' , employee)
-app.use("/", resetPassword);
-//app.use('/admin', require('./routes/adminAuth'));
-//app.use('/admin/dashboard', require('./routes/adminDash'));
+app.use("/",signupRoutes);
 
 // Homepage
-app.get("/", (req, res) => res.redirect("/login"));
+//app.get("/", (req, res) => res.redirect("/login"));
 
 //6. bootstrapping the server
 app.listen(PORT, () => console.log(`listening on port ${PORT}`));

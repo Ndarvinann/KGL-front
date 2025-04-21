@@ -48,7 +48,7 @@ head
                   option(value='maize') Maize
                   option(value='beans') Beans
                   option(value='cow-peas') Cow-peas
-                  option(value=Soy-beans) Soy-beans
+                  option(value='Soybeans') Soy-beans
               .mb-3
                 label.form-label(for='tonnage') Quantity (in kgs)
                 .input-group
@@ -60,9 +60,9 @@ head
               .mb-3
                 label.form-label(for='branchName') Branch Name
                 select#branchName.form-select(required='')
-                  option(selected='' disabled='' value='') Select Branch
-                  option Maganjo
-                  option Matuga
+                  option(selected='' disabled='' value='' name='branchname') Select Branch
+                  option(value='maganjo') Maganjo
+                  option(value='matuga') Matuga
             //- Right Column
             .col-md-6
               .mb-3
