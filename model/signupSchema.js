@@ -31,22 +31,9 @@ const signupSchema = new mongoose.Schema({
     enum: ["salesAgent", "manager", "director"],
     default: ["salesAgent"],
   },
-  password: {
-    type:String,
-    trim:true,
-    required:true,
-  },
-  confirmPassword:{
-    type:String,
-    trim:true,
-    required:true,
-    unique:true,
-  },
-});
+  });
 signupSchema.plugin(passportLocalMongoose,{
-    usenameField:'email',
+    usernameField:'email',
 });
 //delete mongoose.connection.models['Signup'];
-
-signupSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model('signup', signupSchema);
