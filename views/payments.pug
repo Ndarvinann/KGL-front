@@ -41,11 +41,11 @@ head
                     |  Produce Name
                   input#cashProduct.form-control(type='text' list='cashProductList' placeholder='Type to search available products' required='' name='cashSale')
                   datalist#cashProductList
-                    option(value='beans')
-                    option(value='maize')
-                    option(value='peas')
-                    option(value='soyBeans')
-                    option(value='gnuts')
+                    option(value='Beans')
+                    option(value='Maize')
+                    option(value='Peas')
+                    option(value='SoyBeans')
+                    option(value='Gnuts')
               .col-md-6
                 .mb-3
                   label.form-label(for='cashTonnage')
@@ -77,7 +77,7 @@ head
                   label.form-label(for='cashDate')
                     i.fas.fa-calendar-alt.me-1
                     |  Date &amp; Time
-                  input#cashDate.form-control.readonly-field(type='datetime-local', value='currentDateTime', readonly name='cashDate')
+                  input#cashDate.form-control.readonly-field(type='datetime-local', readonly name='cashDate')
             button.btn.btn-primary.mt-3(type='submit')
               i.fas.fa-save
               |  Record Cash Sale
@@ -134,10 +134,10 @@ head
                     label.form-label(for='creditProduct') Produce Name
                     input#creditProduct.form-control(type='text' list='creditProductList' placeholder='Type to search available products' required='' name='creditProduct')
                     datalist#creditProductList
-                      option(value='Beans ')
+                      option(value='Beans')
                       option(value='Maize')
                       option(value='Peas')
-                      option(value='soyBeans')
+                      option(value='SoyBeans')
                       option(value='Gnuts')
                 .col-md-6
                   .mb-3
@@ -156,7 +156,7 @@ head
                 .col-md-6
                   .mb-3
                     label.form-label(for='creditDispatchDate') Date of Dispatch
-                    input#creditDispatchDate.form-control(type='datetime-local' required='' name='dispatchDate')
+                    input#creditDispatchDate.form-control(type='date' required='' name='dispatchDate')
             .mb-3
               label.form-label(for='creditAgent')
                 i.fas.fa-user-tie.me-1

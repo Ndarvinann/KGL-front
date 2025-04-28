@@ -4,7 +4,7 @@ const cashSaleSchema = new mongoose.Schema({
   cashSale: {
     type: String,
     required: true,
-    enum: ["beans", "maize", "peas", "soyBeans", "gnuts"],
+    enum:['Beans','Maize', 'Peas', 'SoyBeans', 'Gnuts'],
   },
   cashTonnage: {
     type: Number,
@@ -21,9 +21,8 @@ const cashSaleSchema = new mongoose.Schema({
     required: true,
     trim: true,
   },
-  CashAgent: {
+  cashAgent: {
     type: String,
-    required: true,
     trim: true,
   },
   cashDate: {

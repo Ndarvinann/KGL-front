@@ -28,8 +28,8 @@ const signupSchema = new mongoose.Schema({
     type: String,
     trim: true,
     required: true,
-    enum: ["salesAgent", "manager", "director"],
-    default: ["salesAgent"],
+    //enum: ["salesAgent", "manager", "director"],
+    //default: "salesAgent"
   },
   });
 signupSchema.plugin(passportLocalMongoose,{

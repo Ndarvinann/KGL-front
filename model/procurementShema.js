@@ -16,12 +16,11 @@ const procurementShema = new mongoose.Schema({
         type: String,
         trim:true,
         required: true,
-        unique:true,
     },
     branchname:{
         type:String,
         required:true,
-        enum:['maganjo','matuga'],
+        enum:['maganjo','matuga', 'Local Traders'],
     },
     dateAndTime:{
         type: Date,
@@ -36,12 +35,11 @@ const procurementShema = new mongoose.Schema({
         type:String,
         trim: true,
         required: true,
-        unique: true,
     },
     priceToSell:{
         type: Number,
         required: true,
         min: 0,
-    },
+    }, 
 });
 module.exports = mongoose.model('procurement', procurementShema);

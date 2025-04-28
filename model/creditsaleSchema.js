@@ -30,12 +30,17 @@ const creditSaleSchema = new mongoose.Schema({
     },
     creditDueDate:{
         type: Date,
-        default: Date.now
+        default:() => new Date(Date.now() + 30 * 24 * 60 * 60 * 1000) //30days from today
+    },
+    status: {
+        type: String,
+        enum: ["Pending", "Paid", "Overdue"],
+        default: "Pending"
     },
     creditProduct:{
         type: String,
         required: true,
-        enum:['Beans','Maize', 'Peas', 'soyBeans', 'Gnuts'],
+        enum:['Beans','Maize', 'Peas', 'SoyBeans', 'Gnuts'],
     },
     creditTonnage:{
         type:Number,
@@ -48,7 +53,6 @@ const creditSaleSchema = new mongoose.Schema({
     },
     creditAgent:{
         type: String,
-        required: true,
         trim: true, 
     },
 });

@@ -3,7 +3,7 @@ const router = express.Router();
 
 //import models
 const cashSaleSchema = require('../model/cashSaleSchema');
-const creditsaleSchemac= require('../model/creditsaleSchema')
+const creditsaleSchema = require('../model/creditsaleSchema')
 
 
 //utility date format
@@ -24,7 +24,7 @@ router.post('/addCashPayment', (req, res)=>{
         const cashSale = new cashSaleSchema(req.body);
         cashSale.save();
         console.log(cashSale)
-        res.redirect('/payments')
+        res.redirect('/addCreditPayment')
     } catch (error) {
         res.status(400).render('payments')
     }
@@ -32,8 +32,7 @@ router.post('/addCashPayment', (req, res)=>{
 });
 
  router.get('/addCreditPayment', (req,res)=>{
-    const formattedDateTime = getFormattedDateTime();
-res.render('payments',{
+    res.render('payments',{
     currentDateTime: formattedDateTime,
     agentName: 'Makanga Joe'
   });
@@ -41,10 +40,10 @@ res.render('payments',{
 
  router.post('/addCreditPayment', (req, res)=>{
     try {
-        const creditSale = new creditSaleSchema(req.body);
-        cashSale.save();
-        console.log(cashSale)
-        res.redirect('/payments')
+        const creditSale = new creditsaleSchema(req.body);
+        creditSale.save();
+        console.log(creditSale)
+        res.redirect('/addCashPayment')
     } catch (error) {
         res.status(400).render('payments')
         console.log(req.body)

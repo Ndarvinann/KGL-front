@@ -67,6 +67,7 @@ app.use("/", managerRoutes);
 app.use("/", procurementRoutes);
 app.use("/", paymentRoutes);
 app.use('/', salesDash);
+app.use("/", resetPassword);
 
 
 // Homepage

@@ -23,6 +23,7 @@ router.post("/signup", async (req, res) => {
       await SignUp.register(user, req.body.password, (error) => {
         if (error) {
           throw error;
+          return res.status(500).send("Error during registration");
         }
         res.redirect("/login"); //continue and log in
       });
@@ -40,8 +41,7 @@ router.get("/login", (req, res) => {
 
 router.post( "/login", passport.authenticate("local", { failureRedirect: "/login" }),
   (req, res) => {
-    console.log(req.body);
-    req.session.user = req.user;
+  console.log(req.body);
     if (req.user.role === "manager") {
       res.redirect("/managerDash");
     } else if (req.user.role === "salesAgent") {
@@ -50,9 +50,18 @@ router.post( "/login", passport.authenticate("local", { failureRedirect: "/login
       res.redirect("/report");
     }
     else{
-      res.send('Please sign up')
+      res.send('"Role not defined, please contact admin"')
     }
   }
 );
-
+router.get('/logout', (req,res)=>{
+  if(req.session){
+    req.session.destroy((error)=>{
+      if(error){
+        return res.status(500).send(error ,'Error logging out')
+      }
+      res.redirect('/login')
+    })
+  }
+})
 module.exports = router;

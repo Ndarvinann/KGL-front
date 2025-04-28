@@ -14,8 +14,8 @@ router.post("/addProduce", async(req, res) => {
     await newProduce.save();
     res.redirect("/addProduce");
   }catch(err){
-    console.error("Error saving Produce", err);
-    res.status(400).send("failed to save produce");
+    console.error("Error saving Produce", err.message);
+    res.status(400).send("Failed to save produce: " + err.message);
   }
 });
 
