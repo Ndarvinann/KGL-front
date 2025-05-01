@@ -10,7 +10,6 @@ const creditSaleSchema = new mongoose.Schema({
         type: String,
         required: true,
         trim: true,
-        unique: true,
     },
     creditLocation:{
         type: String,
@@ -54,6 +53,12 @@ const creditSaleSchema = new mongoose.Schema({
     creditAgent:{
         type: String,
         trim: true, 
+    },
+    creditCost: { 
+        type: Number,
+        },
+creditProfit: {
+     type: Number, 
     },
 });
 module.exports = mongoose.model('creditSale', creditSaleSchema);

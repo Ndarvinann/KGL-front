@@ -5,7 +5,7 @@ const procurementShema = new mongoose.Schema({
         type:String,
         trim:true,
         required:true,
-        enum:['gnuts', 'maize', 'beans','cow-peas','Soybeans'],
+        enum:['gnuts', 'maize', 'beans','cow-peas','soybeans'],
     },
     kilos:{
         type:Number,

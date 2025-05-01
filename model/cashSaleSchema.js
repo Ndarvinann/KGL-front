@@ -29,6 +29,14 @@ const cashSaleSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  cashCost: { 
+    type: Number, 
+    required: true 
+  }, 
+cashProfit: { 
+  type: Number, 
+  required: true 
+} ,
 });
 
 module.exports = mongoose.model("cashSale", cashSaleSchema);

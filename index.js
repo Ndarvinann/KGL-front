@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const mongoose = require("mongoose");
 const passport = require("passport");
+const moment = require('moment');
 const localStrategy = require("passport-local").Strategy;
 const expressSession = require("express-session")({
   secret: "secret",
@@ -32,6 +33,9 @@ const resetPassword = require("./routes/resetPassword");
 const salesDash = require('./routes/salesDash')
 
 //3.configurations
+
+app.locals.moment = moment;
+
 //connect mongoose
 mongoose.connect(process.env.BASE, {});
 mongoose.connection
