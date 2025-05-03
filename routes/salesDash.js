@@ -109,7 +109,7 @@ router.get("/salesDash",  async (req,res)=>{
             res.status(500).send(`Error Loading page:, ${error.message}`); 
         }
     });
-module.exports = router;
+ module.exports = router;
 
     
    

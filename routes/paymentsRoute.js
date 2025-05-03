@@ -21,6 +21,8 @@ router.get("/addCashPayment", (req,res)=>{
 });
 
 router.post('/addCashPayment', async (req, res)=>{
+    console.log('ENTERING /addCashPayment POST ROUTE!'); // First log
+    console.log('POST request to /addCashPayment received:', req.body); // Log the request body
     try {
         const { cashSale, cashTonnage, cashAmount } = req.body;
         const produce = cashSale.toLowerCase();
@@ -47,7 +49,7 @@ router.post('/addCashPayment', async (req, res)=>{
     procurements.forEach(procurement =>{
         if (remainingQty <= 0) return;
         const deductQty = Math.min(procurement.kilos, remainingQty);
-        const costDeducted = (deductQty / proc.kilos) * proc.totalCost;
+        const costDeducted = (deductQty / procurement.kilos) * procurement.totalCost;
 
         procurement.kilos -= deductQty;
         remainingQty -= deductQty;

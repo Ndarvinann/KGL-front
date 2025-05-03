@@ -18,6 +18,7 @@ const Signup = require("./model/signupSchema");
 const procurement = require('./model/procurementShema');
 const cashSale = require('./model/cashSaleSchema');
 const creditSale = require('./model/creditsaleSchema');
+const adjustedStock = require('./model/stockAdjustmentSchema');
 
 //2.instatiations
 const app = express();
@@ -52,6 +53,7 @@ app.set("views", path.join(__dirname, "views"));
 //4.middleware
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 //express session configurations
 

@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', ()=> {
+  console.log('payments.js has loaded!'); // Confirm script loading
+
     // Prices per kg for different products
     const pricePerKg = {
       Beans: 3000,
@@ -35,6 +37,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     if (cashProductInput && cashTonnageInput) {
       cashProductInput.addEventListener('input', updateCashAmount);
       cashTonnageInput.addEventListener('input', updateCashAmount);
+      console.log('Cash sales form element found!'); // Confirm form element is found
     }
   
     // Function to calculate and fill Credit Amount

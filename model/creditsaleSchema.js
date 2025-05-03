@@ -54,11 +54,11 @@ const creditSaleSchema = new mongoose.Schema({
         type: String,
         trim: true, 
     },
-    creditCost: { 
+creditCost: { 
         type: Number,
         },
 creditProfit: {
      type: Number, 
-    },
+   },
 });
 module.exports = mongoose.model('creditSale', creditSaleSchema);
